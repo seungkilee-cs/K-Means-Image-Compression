@@ -1,0 +1,391 @@
+❯ K-Means-Image-Compression
+❯ ls
+\_git_pull.bat \_git_push.bat assets git-deploy.sh README.md src understanding.md
+❯ cd src
+❯ ls
+asset cpp KMeanCluster.ipynb python
+❯ cd cpp
+❯ ls
+build CMakeLists.txt image_processor.cpp image_processor.hpp lloyd.cpp lloyd.hpp main.cpp
+❯ cmake -S . -B build
+CMake Error at CMakeLists.txt:7 (find_package):
+By not providing "FindOpenCV.cmake" in CMAKE_MODULE_PATH this project has
+asked CMake to find a package configuration file provided by "OpenCV", but
+CMake did not find one.
+
+Could not find a package configuration file provided by "OpenCV" with any
+of the following names:
+
+    OpenCVConfig.cmake
+    opencv-config.cmake
+
+Add the installation prefix of "OpenCV" to CMAKE_PREFIX_PATH or set
+"OpenCV_DIR" to a directory containing one of the above files. If "OpenCV"
+provides a separate development package or SDK, be sure it has been
+installed.
+
+-- Configuring incomplete, errors occurred!
+❯ brew install opencv
+==> Fetching downloads for: opencv
+==> Downloading https://ghcr.io/v2/homebrew/core/opencv/manifests/4.12.0_11
+############################################################################################################################################################################ 100.0%
+==> Fetching dependencies for opencv: abseil, eigen, metis, isl, mpfr, libmpc, gcc, openblas, libomp, suite-sparse, hwloc, tbb, ceres-solver, jsoncpp, numpy, nlohmann-json, protobuf, onnx, openvino, libaec, hdf5, cgns, libharu, netcdf, proj, pyqt, utf8cpp, vtk and glew
+==> Downloading https://ghcr.io/v2/homebrew/core/abseil/manifests/20250814.0_1
+############################################################################################################################################################################ 100.0%
+==> Fetching abseil
+==> Downloading https://ghcr.io/v2/homebrew/core/abseil/blobs/sha256:880f97986104b646e3e4a86a6adad49c0655c85164a298f2f97db048d466e752
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/eigen/manifests/3.4.0_1-3
+############################################################################################################################################################################ 100.0%
+==> Fetching eigen
+==> Downloading https://ghcr.io/v2/homebrew/core/eigen/blobs/sha256:06503290dc3c07a67b8f582046b0a7f0bd68c2cb2da1e5bc071710de5ba7f5ec
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/metis/manifests/5.1.0
+############################################################################################################################################################################ 100.0%
+==> Fetching metis
+==> Downloading https://ghcr.io/v2/homebrew/core/metis/blobs/sha256:daaf2366f0870fd9cf13446d1dee1a8a9bfebb742748fee2911cfabe1e53407f
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/isl/manifests/0.27
+############################################################################################################################################################################ 100.0%
+==> Fetching isl
+==> Downloading https://ghcr.io/v2/homebrew/core/isl/blobs/sha256:edae3d6050998a8b6c40d79244d1c73231537371e7a36a3a72f756ed965088be
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/mpfr/manifests/4.2.2
+############################################################################################################################################################################ 100.0%
+==> Fetching mpfr
+==> Downloading https://ghcr.io/v2/homebrew/core/mpfr/blobs/sha256:ba4a1b8388386e6618de7c7e27199ae8de473373330f5773e2095567a71d76fd
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/libmpc/manifests/1.3.1
+############################################################################################################################################################################ 100.0%
+==> Fetching libmpc
+==> Downloading https://ghcr.io/v2/homebrew/core/libmpc/blobs/sha256:1c63e3a084ca2b4e818ccca9ea563f54a12229679c8bfde43d4cb5cbcf0020af
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/gcc/manifests/15.1.0-2
+############################################################################################################################################################################ 100.0%
+==> Fetching gcc
+==> Downloading https://ghcr.io/v2/homebrew/core/gcc/blobs/sha256:90093c64c1f1a397aa3b414730f96854e9004eb8d8603e0a0044856d58e6922f
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/openblas/manifests/0.3.30-1
+############################################################################################################################################################################ 100.0%
+==> Fetching openblas
+==> Downloading https://ghcr.io/v2/homebrew/core/openblas/blobs/sha256:dcef53fdbfa90411375b209ac11ae5b41e6c63f9f139e155d892bb2e4616feb6
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/libomp/manifests/21.1.1
+############################################################################################################################################################################ 100.0%
+==> Fetching libomp
+==> Downloading https://ghcr.io/v2/homebrew/core/libomp/blobs/sha256:d5f577174311174ad4f980fb7a7e721f029f9c7bec0adc5d917298e9c3eedfbd
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/suite-sparse/manifests/7.11.0
+############################################################################################################################################################################ 100.0%
+==> Fetching suite-sparse
+==> Downloading https://ghcr.io/v2/homebrew/core/suite-sparse/blobs/sha256:d17e1f63a48010491d52b47bc65dcbd4cb2f9ca701835984cba60a9d02d09327
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/hwloc/manifests/2.12.2
+############################################################################################################################################################################ 100.0%
+==> Fetching hwloc
+==> Downloading https://ghcr.io/v2/homebrew/core/hwloc/blobs/sha256:567c5b15c6b01b8702b87230d517f6d12573d46d396830e5fc5fae13745a2888
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/tbb/manifests/2022.2.0
+############################################################################################################################################################################ 100.0%
+==> Fetching tbb
+==> Downloading https://ghcr.io/v2/homebrew/core/tbb/blobs/sha256:1e37bd0a4c1f15bd70b6dd3a5f6b5e8a9f0c125e3b3f2c4cac34add223c0012f
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/ceres-solver/manifests/2.2.0_1
+############################################################################################################################################################################ 100.0%
+==> Fetching ceres-solver
+==> Downloading https://ghcr.io/v2/homebrew/core/ceres-solver/blobs/sha256:f949ae21f99855aa96d25e8cb2a30cf7d001b8af8193a9b0ab4032969c5ab6a9
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/jsoncpp/manifests/1.9.6
+############################################################################################################################################################################ 100.0%
+==> Fetching jsoncpp
+==> Downloading https://ghcr.io/v2/homebrew/core/jsoncpp/blobs/sha256:8917f4a14ef0bd4f4d59f8d1a4689c653dd69180fe6ae7c3915bcd904db1d056
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/numpy/manifests/2.3.3
+############################################################################################################################################################################ 100.0%
+==> Fetching numpy
+==> Downloading https://ghcr.io/v2/homebrew/core/numpy/blobs/sha256:71d38e4ce2299196809913096c37b4405985c24e86d53950c8a32f4dc2abb842
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/nlohmann-json/manifests/3.12.0-1
+############################################################################################################################################################################ 100.0%
+==> Fetching nlohmann-json
+==> Downloading https://ghcr.io/v2/homebrew/core/nlohmann-json/blobs/sha256:df65065eb8504f15f8802b7c681df015a592a68336db7fe290eeeda59fa1e440
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/protobuf/manifests/32.1
+############################################################################################################################################################################ 100.0%
+==> Fetching protobuf
+==> Downloading https://ghcr.io/v2/homebrew/core/protobuf/blobs/sha256:12040092975230c2eda4db4aeabc75f07cd64b30458fe6dc775bd52a44694967
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/onnx/manifests/1.17.0_7
+############################################################################################################################################################################ 100.0%
+==> Fetching onnx
+==> Downloading https://ghcr.io/v2/homebrew/core/onnx/blobs/sha256:95855fd2e9e3e78bf73a3fe128fdb41fb7009fa59b346264c857c087bd6fc75b
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/openvino/manifests/2025.3.0_1
+############################################################################################################################################################################ 100.0%
+==> Fetching openvino
+==> Downloading https://ghcr.io/v2/homebrew/core/openvino/blobs/sha256:8f571534b831a55e338202ad1ef23c37ca14ed6cbc0a729966765f037fa0b1ae
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/libaec/manifests/1.1.4-1
+############################################################################################################################################################################ 100.0%
+==> Fetching libaec
+==> Downloading https://ghcr.io/v2/homebrew/core/libaec/blobs/sha256:f30ea9156cebcdba5c55cdcb0318ce486cfa5df3078a3a4c7a986fb846f33ce1
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/hdf5/manifests/1.14.6
+############################################################################################################################################################################ 100.0%
+==> Fetching hdf5
+==> Downloading https://ghcr.io/v2/homebrew/core/hdf5/blobs/sha256:13a628da9dbe2b7528532731dabe50715bf0487ce069f040fac75f9eadd8b3b5
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/cgns/manifests/4.5.0
+############################################################################################################################################################################ 100.0%
+==> Fetching cgns
+==> Downloading https://ghcr.io/v2/homebrew/core/cgns/blobs/sha256:b0c10740cb9177010cf815816c1f31882d8ac61213022d68729dc2f3b65c43f2
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/libharu/manifests/2.4.5
+############################################################################################################################################################################ 100.0%
+==> Fetching libharu
+==> Downloading https://ghcr.io/v2/homebrew/core/libharu/blobs/sha256:c0f5f184237e5b4351a2d79b3c301a4d70483bc678665524298048941938d166
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/netcdf/manifests/4.9.3
+############################################################################################################################################################################ 100.0%
+==> Fetching netcdf
+==> Downloading https://ghcr.io/v2/homebrew/core/netcdf/blobs/sha256:8dc2871bf05e90c183d942121bdbeb217b52e84d3c2d76945a747b47664b5206
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/proj/manifests/9.7.0
+############################################################################################################################################################################ 100.0%
+==> Fetching proj
+==> Downloading https://ghcr.io/v2/homebrew/core/proj/blobs/sha256:2bf1a69543056eba5438bec66b6c5db2b6a72c111242f2d2211e20d2d2a7f468
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/pyqt/manifests/6.9.1
+############################################################################################################################################################################ 100.0%
+==> Fetching pyqt
+==> Downloading https://ghcr.io/v2/homebrew/core/pyqt/blobs/sha256:be7ad408bddb66cab773fe31d823a29efad50095d8f83e561e907bf06c5493c0
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/utf8cpp/manifests/4.0.8
+############################################################################################################################################################################ 100.0%
+==> Fetching utf8cpp
+==> Downloading https://ghcr.io/v2/homebrew/core/utf8cpp/blobs/sha256:7089d7abf749ad7d492fdc83781eb929aacc6ee829d5e85753a380256adf48fc
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/vtk/manifests/9.5.2
+############################################################################################################################################################################ 100.0%
+==> Fetching vtk
+==> Downloading https://ghcr.io/v2/homebrew/core/vtk/blobs/sha256:de9a19a0dc55d7bd49a326e9e31ac7651152fbc0d5e6cd5bdb592e988a285d1c
+############################################################################################################################################################################ 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/glew/manifests/2.2.0_1-2
+############################################################################################################################################################################ 100.0%
+==> Fetching glew
+==> Downloading https://ghcr.io/v2/homebrew/core/glew/blobs/sha256:b09c9df6478e5d9c3337bffd756f78c2cf6bf5e5de0bf7db8066e8683c2bb3a1
+############################################################################################################################################################################ 100.0%
+==> Fetching opencv
+==> Downloading https://ghcr.io/v2/homebrew/core/opencv/blobs/sha256:24a9b60f1ac6e89f0444a5085eed844c8d2cc39e74de614a3b9c84b31b986a18
+############################################################################################################################################################################ 100.0%
+==> Installing dependencies for opencv: abseil, eigen, metis, isl, mpfr, libmpc, gcc, openblas, libomp, suite-sparse, hwloc, tbb, ceres-solver, jsoncpp, numpy, nlohmann-json, protobuf, onnx, openvino, libaec, hdf5, cgns, libharu, netcdf, proj, pyqt, utf8cpp, vtk and glew
+==> Installing opencv dependency: abseil
+==> Downloading https://ghcr.io/v2/homebrew/core/abseil/manifests/20250814.0_1
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/51870065f9d99711dd59693c4a0b97abd5b82e670403a3538155542da5fda2d7--abseil-20250814.0_1.bottle_manifest.json
+==> Pouring abseil--20250814.0_1.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/abseil/20250814.0_1: 778 files, 8.7MB
+==> Installing opencv dependency: eigen
+==> Downloading https://ghcr.io/v2/homebrew/core/eigen/manifests/3.4.0_1-3
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/90e81ce45365a9ebe41e9033dad3ff6f9115a286153b2d472c0563384f9a266c--eigen-3.4.0_1-3.bottle_manifest.json
+==> Pouring eigen--3.4.0_1.all.bottle.3.tar.gz
+🍺 /usr/local/Cellar/eigen/3.4.0_1: 546 files, 8.4MB
+==> Installing opencv dependency: metis
+==> Downloading https://ghcr.io/v2/homebrew/core/metis/manifests/5.1.0
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/f3ed9b4299ad5a23ac4e265012f58bed7574a85759c297dbea217aeb89707128--metis-5.1.0.bottle_manifest.json
+==> Pouring metis--5.1.0.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/metis/5.1.0: 19 files, 12MB
+==> Installing opencv dependency: isl
+==> Downloading https://ghcr.io/v2/homebrew/core/isl/manifests/0.27
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/40b1c5526f95db33208143fa79887179e758121659d8877597f553e6e6188879--isl-0.27.bottle_manifest.json
+==> Pouring isl--0.27.sequoia.bottle.tar.gz
+🍺 /usr/local/Cellar/isl/0.27: 74 files, 7.7MB
+==> Installing opencv dependency: mpfr
+==> Downloading https://ghcr.io/v2/homebrew/core/mpfr/manifests/4.2.2
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/991b389ea6f1daa5dc48fd5250bcc5b85e827eb18b8ad4acd89419f2ace47d88--mpfr-4.2.2.bottle_manifest.json
+==> Pouring mpfr--4.2.2.sequoia.bottle.tar.gz
+🍺 /usr/local/Cellar/mpfr/4.2.2: 31 files, 3.1MB
+==> Installing opencv dependency: libmpc
+==> Downloading https://ghcr.io/v2/homebrew/core/libmpc/manifests/1.3.1
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/fdfa98e0f8bb3ce075cb32776ac2345aa2f89252706c162aecfc841085fa76be--libmpc-1.3.1.bottle_manifest.json
+==> Pouring libmpc--1.3.1.sequoia.bottle.tar.gz
+🍺 /usr/local/Cellar/libmpc/1.3.1: 13 files, 466.2KB
+==> Installing opencv dependency: gcc
+==> Downloading https://ghcr.io/v2/homebrew/core/gcc/manifests/15.1.0-2
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/1863f5c0f67f3807c41582f234d94068ecc04de2cf7bef58cfbb9851f0d419ba--gcc-15.1.0-2.bottle_manifest.json
+==> Pouring gcc--15.1.0.sequoia.bottle.2.tar.gz
+🍺 /usr/local/Cellar/gcc/15.1.0: 1,715 files, 475.7MB
+==> Installing opencv dependency: openblas
+==> Downloading https://ghcr.io/v2/homebrew/core/openblas/manifests/0.3.30-1
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/153e47cfe5485c0c72224bd2ecf45a60dd4ca8aab6bc685443000485daf2c655--openblas-0.3.30-1.bottle_manifest.json
+==> Pouring openblas--0.3.30.sonoma.bottle.1.tar.gz
+🍺 /usr/local/Cellar/openblas/0.3.30: 29 files, 133.3MB
+==> Installing opencv dependency: libomp
+==> Downloading https://ghcr.io/v2/homebrew/core/libomp/manifests/21.1.1
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/94dc9f7fb724908a5fe536771c5035c3f00bcc048138431bce2dbc1e2530e91b--libomp-21.1.1.bottle_manifest.json
+==> Pouring libomp--21.1.1.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/libomp/21.1.1: 9 files, 1.7MB
+==> Installing opencv dependency: suite-sparse
+==> Downloading https://ghcr.io/v2/homebrew/core/suite-sparse/manifests/7.11.0
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/e5b8f05d7524ee39496000aeabd7b24a7bf5ff7604ade162e41d2a78b698fdec--suite-sparse-7.11.0.bottle_manifest.json
+==> Pouring suite-sparse--7.11.0.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/suite-sparse/7.11.0: 253 files, 50MB
+==> Installing opencv dependency: hwloc
+==> Downloading https://ghcr.io/v2/homebrew/core/hwloc/manifests/2.12.2
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/2a9d34b3c517f112c71775959f258112d242e3ed51bc68d83a8537791c60ff95--hwloc-2.12.2.bottle_manifest.json
+==> Pouring hwloc--2.12.2.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/hwloc/2.12.2: 978 files, 10.4MB
+==> Installing opencv dependency: tbb
+==> Downloading https://ghcr.io/v2/homebrew/core/tbb/manifests/2022.2.0
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/496b2daf6a1a363d88d7d026e207ac64e542294e4888177001a1c3452466cf15--tbb-2022.2.0.bottle_manifest.json
+==> Pouring tbb--2022.2.0.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/tbb/2022.2.0: 180 files, 2.9MB
+==> Installing opencv dependency: ceres-solver
+==> Downloading https://ghcr.io/v2/homebrew/core/ceres-solver/manifests/2.2.0_1
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/dd6f2e2240b05dadd788dced75c7aa50a6c3e977f97388a13aa920e848425f23--ceres-solver-2.2.0_1.bottle_manifest.json
+==> Pouring ceres-solver--2.2.0_1.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/ceres-solver/2.2.0_1: 167 files, 14.0MB
+==> Installing opencv dependency: jsoncpp
+==> Downloading https://ghcr.io/v2/homebrew/core/jsoncpp/manifests/1.9.6
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/13ce4a2a616c5b93ac22312792246bb8e6da48d7e40349d2d2a7f38ea5865214--jsoncpp-1.9.6.bottle_manifest.json
+==> Pouring jsoncpp--1.9.6.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/jsoncpp/1.9.6: 21 files, 285.7KB
+==> Installing opencv dependency: numpy
+==> Downloading https://ghcr.io/v2/homebrew/core/numpy/manifests/2.3.3
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/5a1f5d3ff93b42030cf10ecddc217c79ec134eda9b7dcf9b8424cb7314a54cd5--numpy-2.3.3.bottle_manifest.json
+==> Pouring numpy--2.3.3.sonoma.bottle.tar.gz
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+Could not symlink bin/f2py
+Target /usr/local/bin/f2py
+already exists. You may want to remove it:
+rm '/usr/local/bin/f2py'
+
+To force the link and overwrite all conflicting files:
+brew link --overwrite numpy
+
+To list all files that would be deleted:
+brew link --overwrite numpy --dry-run
+
+Possible conflicting files are:
+/usr/local/bin/f2py
+/usr/local/bin/numpy-config
+==> Summary
+🍺 /usr/local/Cellar/numpy/2.3.3: 1,805 files, 40.5MB
+==> Installing opencv dependency: nlohmann-json
+==> Downloading https://ghcr.io/v2/homebrew/core/nlohmann-json/manifests/3.12.0-1
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/58d1564071629bad53e314f7d66fb1e0c48a608529f913cc14632ca44e4a0902--nlohmann-json-3.12.0-1.bottle_manifest.json
+==> Pouring nlohmann-json--3.12.0.all.bottle.1.tar.gz
+🍺 /usr/local/Cellar/nlohmann-json/3.12.0: 56 files, 1.4MB
+==> Installing opencv dependency: protobuf
+==> Downloading https://ghcr.io/v2/homebrew/core/protobuf/manifests/32.1
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/f88f7a258b823d7b159ce1c42557aa2fce63b5679834da1da0379a27823cbb62--protobuf-32.1.bottle_manifest.json
+==> Pouring protobuf--32.1.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/protobuf/32.1: 361 files, 16MB
+==> Installing opencv dependency: onnx
+==> Downloading https://ghcr.io/v2/homebrew/core/onnx/manifests/1.17.0_7
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/b473578cb0283146259531827322d8a18d4bb24d86aa7b8184d48536824d21f4--onnx-1.17.0_7.bottle_manifest.json
+==> Pouring onnx--1.17.0_7.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/onnx/1.17.0_7: 105 files, 5.5MB
+==> Installing opencv dependency: openvino
+==> Downloading https://ghcr.io/v2/homebrew/core/openvino/manifests/2025.3.0_1
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/2eed624dc6f5236c13955a01ba29ce50c7cc5d296fe7348dcb61826309c683d7--openvino-2025.3.0_1.bottle_manifest.json
+==> Pouring openvino--2025.3.0_1.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/openvino/2025.3.0_1: 907 files, 119MB
+==> Installing opencv dependency: libaec
+==> Downloading https://ghcr.io/v2/homebrew/core/libaec/manifests/1.1.4-1
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/b4a20abb23203f982f0d3c450e1e0c2f6e7db3f145e826cd00d426b5320a950c--libaec-1.1.4-1.bottle_manifest.json
+==> Pouring libaec--1.1.4.sonoma.bottle.1.tar.gz
+🍺 /usr/local/Cellar/libaec/1.1.4: 21 files, 166.7KB
+==> Installing opencv dependency: hdf5
+==> Downloading https://ghcr.io/v2/homebrew/core/hdf5/manifests/1.14.6
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/c3161381778019302171dd2934e763a0329ab211b98f65ae0560231aaaf8e2f9--hdf5-1.14.6.bottle_manifest.json
+==> Pouring hdf5--1.14.6.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/hdf5/1.14.6: 275 files, 17.9MB
+==> Installing opencv dependency: cgns
+==> Downloading https://ghcr.io/v2/homebrew/core/cgns/manifests/4.5.0
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/efd75a10be257c97028fe6273f88bdaf96366bf4e444d9e18a3c0ae9f312db97--cgns-4.5.0.bottle_manifest.json
+==> Pouring cgns--4.5.0.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/cgns/4.5.0: 30 files, 2MB
+==> Installing opencv dependency: libharu
+==> Downloading https://ghcr.io/v2/homebrew/core/libharu/manifests/2.4.5
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/8ee15e79333b33d0d626c017beba65b9b535480e33bc25ca197d3289f1c07937--libharu-2.4.5.bottle_manifest.json
+==> Pouring libharu--2.4.5.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/libharu/2.4.5: 144 files, 2.6MB
+==> Installing opencv dependency: netcdf
+==> Downloading https://ghcr.io/v2/homebrew/core/netcdf/manifests/4.9.3
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/08fe862615e98e6778488a789a039a74ca10a19cfbf1b59fd3bf1046967aedcf--netcdf-4.9.3.bottle_manifest.json
+==> Pouring netcdf--4.9.3.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/netcdf/4.9.3: 33 files, 3.7MB
+==> Installing opencv dependency: proj
+==> Downloading https://ghcr.io/v2/homebrew/core/proj/manifests/9.7.0
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/b1590125cb98769bf403ea963c4fb4ffabe33f1f2f814c268e396bc850558872--proj-9.7.0.bottle_manifest.json
+==> Pouring proj--9.7.0.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/proj/9.7.0: 526 files, 793.5MB
+==> Installing opencv dependency: pyqt
+==> Downloading https://ghcr.io/v2/homebrew/core/pyqt/manifests/6.9.1
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/a4364c0c4d849f4e208d0ff8bde626299ad41279807a153d13d5fd23078af6c4--pyqt-6.9.1.bottle_manifest.json
+==> Pouring pyqt--6.9.1.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/pyqt/6.9.1: 1,263 files, 34.3MB
+==> Installing opencv dependency: utf8cpp
+==> Downloading https://ghcr.io/v2/homebrew/core/utf8cpp/manifests/4.0.8
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/95a657f282906623f3eaf77bf7570d73e49f8c689dcf00eda876ade4b9b13803--utf8cpp-4.0.8.bottle_manifest.json
+==> Pouring utf8cpp--4.0.8.all.bottle.tar.gz
+🍺 /usr/local/Cellar/utf8cpp/4.0.8: 15 files, 146.4KB
+==> Installing opencv dependency: vtk
+==> Downloading https://ghcr.io/v2/homebrew/core/vtk/manifests/9.5.2
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/ffd4c0aea24022c7d486fe5c45f5bc882cb5e09b930c7c3e17306cd7635a0083--vtk-9.5.2.bottle_manifest.json
+==> Pouring vtk--9.5.2.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/vtk/9.5.2: 4,467 files, 223.2MB
+==> Installing opencv dependency: glew
+==> Downloading https://ghcr.io/v2/homebrew/core/glew/manifests/2.2.0_1-2
+Already downloaded: /Users/seungkilee/Library/Caches/Homebrew/downloads/d3faa1969e645740e19fefdadc3a23e1a007cdf40bf4bed6a7c43285a5a28fe7--glew-2.2.0_1-2.bottle_manifest.json
+==> Pouring glew--2.2.0_1.sonoma.bottle.2.tar.gz
+🍺 /usr/local/Cellar/glew/2.2.0_1: 39 files, 3.4MB
+==> Installing opencv
+==> Pouring opencv--4.12.0_11.sonoma.bottle.tar.gz
+🍺 /usr/local/Cellar/opencv/4.12.0_11: 978 files, 260.5MB
+==> Running `brew cleanup opencv`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> No outdated dependents to upgrade!
+❯ ls
+build CMakeLists.txt image_processor.cpp image_processor.hpp lloyd.cpp lloyd.hpp main.cpp
+❯ cmake -S . -B build
+-- Found OpenCV: /usr/local/Cellar/opencv/4.12.0_11 (found version "4.12.0")
+-- Configuring done (0.4s)
+CMake Error at CMakeLists.txt:9 (add_executable):
+Cannot find source file:
+
+    src/main.cpp
+
+Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+.ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+.f95 .f03 .hip .ispc
+
+CMake Error at CMakeLists.txt:9 (add_executable):
+No SOURCES given to target: kmeans_imgc
+
+CMake Generate step failed. Build files cannot be regenerated correctly.
+❯ ls
+build CMakeLists.txt image_processor.cpp image_processor.hpp lloyd.cpp lloyd.hpp main.cpp
+❯ nvim .
+❯ ls
+build CMakeLists.txt image_processor.cpp image_processor.hpp lloyd.cpp lloyd.hpp main.cpp
+❯ rm -rf build
+❯ cmake -S . -B build
+-- The CXX compiler identification is AppleClang 17.0.0.17000319
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found OpenCV: /usr/local/Cellar/opencv/4.12.0_11 (found version "4.12.0")
+-- Configuring done (5.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/seungkilee/Workspace/seungkilee-cs/K-Means-Image-Compression/src/cpp/build
+❯ cmake --build build --config Release
+[ 25%] Building CXX object CMakeFiles/kmeans_imgc.dir/main.cpp.o
+[ 50%] Building CXX object CMakeFiles/kmeans_imgc.dir/image_processor.cpp.o
+[ 75%] Building CXX object CMakeFiles/kmeans_imgc.dir/lloyd.cpp.o
+[100%] Linking CXX executable kmeans_imgc
+[100%] Built target kmeans_imgc

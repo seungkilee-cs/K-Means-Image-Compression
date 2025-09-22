@@ -1,0 +1,3 @@
+/Users/seungkilee/Workspace/seungkilee-cs/K-Means-Image-Compression/src/cpp/build/CMakeFiles/kmeans_imgc.dir
+/Users/seungkilee/Workspace/seungkilee-cs/K-Means-Image-Compression/src/cpp/build/CMakeFiles/edit_cache.dir
+/Users/seungkilee/Workspace/seungkilee-cs/K-Means-Image-Compression/src/cpp/build/CMakeFiles/rebuild_cache.dir
