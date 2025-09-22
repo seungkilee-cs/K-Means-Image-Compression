@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 _legacy/
+*/.DS_Store
+.DS_Store
