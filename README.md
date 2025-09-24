@@ -28,13 +28,9 @@ Will create the poc compression for the image.
 
 ### Results
 
-#### Original Image (474kb/PNG)
-
-![PNG](./assets/Lenna.png)
-
-#### Compressed Image with 16 clusters and 90 JPEG quality (82kb/JPEG)
-
-![JPEG](./src/cpp/out/Lenna_k16_q90.jpg)
+| Original (474kb/PNG)       | Compressed Image w/ 16 Clusters (82kb/JPEG) |
+| -------------------------- | ------------------------------------------- |
+| ![PNG](./assets/Lenna.png) | ![JPEG](./src/cpp/out/Lenna_k16_q90.jpg)    |
 
 ## Python
 
