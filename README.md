@@ -1,6 +1,6 @@
 # K-Means-Image-Compression
 
-My implementation of Image Compression by K Means Clustering
+My implementation of Image Compression by K Means Clustering, in various languages
 
 ## Cpp
 
@@ -36,22 +36,28 @@ Of course, none other than the first lady of the internet
 
 ## Python
 
-WIP
+Initial prototyping
 
 ## Typescript
 
-WIP
+Building a client-side image compressor. The problem with "free" online converters is that your data ends up on someone else's server where they can do whatever they want with it. TypeScript with Vite is my preferred tool for this kind of web application, and I want to test how well these algorithms perform in the browser.
 
 ## Rust
 
-WIP
+I've been avoiding Rust for a while, partly due to a "just write in C" mentality and partly because of my general aversion to evangelists. However, my [first experience](https://github.com/seungkilee-cs/spektra/blob/master/docs/fft-js_rust%2Bwasm_comparison.md) with Rust through WebAssembly was surprisingly positive and measurably faster than native JavaScript. After that Rust conversion therapy, I want to properly learn it as a viable tool. The best way to learn something new is to solve a problem you already understand, letting you focus on implementation rather than figuring out the problem itself.
+
+## Elixir
+
+Can functional programming do more than just servers? How would performance compare? Time to find out.
 
 ## Next Agenda
 
-- Build TS frontend to allow real time comparison between the original image uploaded vs the compressed image.
-- Build Client Side Image Compression App to upload and compress images.
-- In the TS client, allow for parameter slides to see the actual compression results in real time.
-- Support other compression algorithms and allow dropdown selection for the users to test out different compression algorithms
-- Add metadata display for original and compressed image
-- support more output formats
-- Flesh out to Client side image compression app with TS UI and support the core for CLI
+- Modularize the C++ code. There was too much Stack Overflow involved and proper refactoring would help.
+- Add compression performance comparisons.
+- Build TypeScript frontend for real-time comparison between original and compressed images.
+- Create client-side image compression app for uploading and compressing images.
+- Add parameter sliders in the TypeScript client to see compression results in real time.
+- Support additional compression algorithms with dropdown selection for users to test different approaches.
+- Display metadata for both original and compressed images.
+- Support more output formats.
+- Expand the TypeScript UI into a full client-side image compression app while maintaining CLI support.
