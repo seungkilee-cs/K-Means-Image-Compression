@@ -28,6 +28,8 @@ Will create the poc compression for the image.
 
 ### Results
 
+Of course, none other than the first lady of the internet
+
 | Original (474kb/PNG)       | Compressed Image w/ 16 Clusters (82kb/JPEG) |
 | -------------------------- | ------------------------------------------- |
 | ![PNG](./assets/Lenna.png) | ![JPEG](./src/cpp/out/Lenna_k16_q90.jpg)    |
