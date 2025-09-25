@@ -48,7 +48,7 @@ I've been avoiding Rust for a while, partly due to a "just write in C" mentality
 
 ## Elixir
 
-Can functional programming do more than just servers? How would performance compare? Time to find out.
+Absolutely love Elixir, and I want to see if I can solve thie problem in Elixir and better learn the language for application use.
 
 ## Next Agenda
 
