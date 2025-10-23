@@ -1,0 +1,12 @@
+# Mix build artifacts
+_build/
+cover/
+imgc
+
+deps/
+
+# Elixir binaries
+*.beam
+
+# Mix lock for dependencies (optional to track)
+/mix.lock

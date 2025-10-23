@@ -1,0 +1,8 @@
+# Cargo build output
+/target/
+
+# Generated binaries
+imgc
+
+# Rust tool caches
+**/*.rs.bk
