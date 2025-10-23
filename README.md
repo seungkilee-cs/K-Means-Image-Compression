@@ -36,7 +36,15 @@ Of course, none other than the first lady of the internet
 
 ## Python
 
-Initial prototyping
+See `src/python/README.md` for architecture and usage details.
+
+## Rust
+
+See `src/rust/README.md` for architecture and usage details.
+
+## TypeScript
+
+See `src/typescript/README.md` for architecture and usage details.
 
 ## Typescript
 
@@ -45,10 +53,6 @@ Building a client-side image compressor. The problem with "free" online converte
 ## Rust
 
 I've been avoiding Rust for a while, partly due to a "just write in C" mentality and partly because of my general aversion to evangelists. However, my [first experience](https://github.com/seungkilee-cs/spektra/blob/master/docs/fft-js_rust%2Bwasm_comparison.md) with Rust through WebAssembly was surprisingly positive and measurably faster than native JavaScript. After that Rust conversion therapy, I want to properly learn it as a viable tool. The best way to learn something new is to solve a problem you already understand, letting you focus on implementation rather than figuring out the problem itself.
-
-## Elixir
-
-Can functional programming do more than just servers? How would performance compare? Time to find out.
 
 ## Next Agenda
 
