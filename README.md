@@ -2,7 +2,7 @@
 
 My implementation of Image Compression by K Means Clustering, in various languages
 
-## Cpp
+## [Cpp](src/cpp/README.md)
 
 ### How To Use
 
@@ -34,25 +34,18 @@ Of course, none other than the first lady of the internet
 | -------------------------- | ------------------------------------------- |
 | ![PNG](./assets/Lenna.png) | ![JPEG](./src/cpp/out/Lenna_k16_q90.jpg)    |
 
-## Python
+## [Python](src/python/README.md)
 
-See `src/python/README.md` for architecture and usage details.
+Prototyping
 
-## Rust
+## [Rust](src/rust/README.md)
 
-See `src/rust/README.md` for architecture and usage details.
+I've been avoiding Rust for a while, partly due to a "just write in C" mentality and partly because of my general aversion to evangelists. However, my [first experience](https://github.com/seungkilee-cs/spektra/blob/master/docs/fft-js_rust%2Bwasm_comparison.md) with Rust through WebAssembly was surprisingly positive and measurably faster than native JavaScript. After that Rust conversion therapy, I want to properly learn it as a viable tool. The best way to learn something new is to solve a problem you already understand, letting you focus on implementation rather than figuring out the problem itself.
 
-## TypeScript
-
-See `src/typescript/README.md` for architecture and usage details.
-
-## Typescript
+## [Typescript](src/typescript/README.md)
 
 Building a client-side image compressor. The problem with "free" online converters is that your data ends up on someone else's server where they can do whatever they want with it. TypeScript with Vite is my preferred tool for this kind of web application, and I want to test how well these algorithms perform in the browser.
 
-## Rust
-
-I've been avoiding Rust for a while, partly due to a "just write in C" mentality and partly because of my general aversion to evangelists. However, my [first experience](https://github.com/seungkilee-cs/spektra/blob/master/docs/fft-js_rust%2Bwasm_comparison.md) with Rust through WebAssembly was surprisingly positive and measurably faster than native JavaScript. After that Rust conversion therapy, I want to properly learn it as a viable tool. The best way to learn something new is to solve a problem you already understand, letting you focus on implementation rather than figuring out the problem itself.
 
 ## Next Agenda
 
