@@ -1,0 +1,5 @@
+if(EXISTS "/Users/seungkilee/Workspace/seungkilee-cs/K-Means-Image-Compression/src/cpp/build/imgc_tests[1]_tests.cmake")
+  include("/Users/seungkilee/Workspace/seungkilee-cs/K-Means-Image-Compression/src/cpp/build/imgc_tests[1]_tests.cmake")
+else()
+  add_test(imgc_tests_NOT_BUILT imgc_tests_NOT_BUILT)
+endif()

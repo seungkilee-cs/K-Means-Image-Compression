@@ -1,0 +1,14 @@
+# Build directories
+build/
+out/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Binaries and test executables
+imgc_tests
+kmeans_imgc
+

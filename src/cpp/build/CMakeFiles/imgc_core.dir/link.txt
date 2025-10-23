@@ -1,0 +1,2 @@
+/usr/bin/ar qc libimgc_core.a CMakeFiles/imgc_core.dir/src/image_preprocessor.cpp.o CMakeFiles/imgc_core.dir/src/image_io.cpp.o CMakeFiles/imgc_core.dir/src/timing.cpp.o CMakeFiles/imgc_core.dir/src/cli.cpp.o CMakeFiles/imgc_core.dir/src/algorithms/KMeansCompressor.cpp.o
+/usr/bin/ranlib libimgc_core.a
